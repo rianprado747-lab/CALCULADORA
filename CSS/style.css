@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.fundo{
+    background-image: url('https://w.wallhaven.cc/full/1q/wallhaven-1qxqo9.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Wallpoet', cursive;
+    text-align: center;
+}
+.titulo{
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 10%;
+    left: 3%;
+}
+.calculadora{
+    position:absolute;
+    background-color: rgb(0, 0, 0,0.5);
+    color: rgb(255, 255, 255);
+    top: 50%;
+    left: 24%;
+    transform:  translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 20px;
+}
+.botao{
+   width: 50px;
+   height: 50px;
+   font-size: 20px;
+   cursor: pointer;
+   background-color: rgb(167, 20, 204);
+   border-radius: 50%;
+   border: none;
+   margin: 5px;
+   transition: 0.5s;
+}
+.botao:hover{
+    transition: 0.8s;
+    transform: scale(1.2);
+    background-color: rgb(32, 29, 53);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+}
+.igual{
+    width: 50px;
+    height: 110px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(167, 20, 204);
+    border:none;
+    border-radius: 30px;
+    margin: 5px;
+    transition: 0.5s;
+}
+.igual:hover{
+     transition: 0.5s;
+    transform: scale(1.2);
+    background-color: rgb(22, 168, 47);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+}
+.zero{
+    width: 110px;
+   height: 50px;
+   font-size: 20px;
+   cursor: pointer;
+   background-color: rgb(167, 20, 204);
+   border:none;
+    border-radius: 30px;
+    margin: 5px;
+    transition: 0.5s;
+}
+.zero:hover{
+   transition: 0.5s;
+    transform: scale(1.2);
+    background-color: rgb(32, 29, 53);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+}
+.del{
+    width: 50px;
+   height: 50px;
+   font-size: 20px;
+   cursor: pointer;
+   background-color: rgb(167, 20, 204);
+   border-radius: 50%;
+   border: none;
+   margin: 5px;
+   transition: 0.5s;
+}
+.del:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+}
+#resultado{
+    background-color: rgb(255, 255, 255);
+    width: 230px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-align: right;
+    color: black;
+    position: relative;
+    left: 9px;
+    margin-top: 15px;
+    font-size: 20px;
+    padding: 5px;
+}
