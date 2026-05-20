@@ -21,13 +21,35 @@ function calcular()
 {
     var resultado = document.getElementById('resultado').innerHTML;
     if (resultado) {
+        try {//se tiver algo no visor tenta calcular
         document.getElementById('resultado').innerHTML = eval(resultado);
+        }
+        catch{//se o usuario digiou algo errado limpa o visor
+        clean()
     }
     // A função calcular() é usada para avaliar a expressão matemática que o usuário inseriu na calculadora.
     // Ela pega o conteúdo do elemento com o id 'resultado' e, se houver algo lá, usa a função eval() para calcular o resultado da expressão.
     // O resultado é então exibido no mesmo elemento. A função eval() é poderosa, mas deve ser usada com cuidado, pois pode executar código malicioso se a entrada não for controlada.
-    else{
-        document.getElementById('resultado').innerHTML = "inválido";
+}
+else{
+    clean()
+}
+}   
+document.addEventListener('keydown',function(evento){//captura a entrada do teclado na pagina
+    const tecla = evento.key;//guarda a tecla digitada
+    if (/[0-9\/\*\-\+\.]/.test(tecla)){//verificando qual tecla foi selecionada, o /[0-9\ é uma regex, ela funciona como uma lista de permissôes
+// o test(tecla) verifica se a tecla apertada esta dentro da lista,se sim executa o insert
+        insert(tecla);
+    }
+    if(tecla === 'Enter'|| tecla ==='='){
+        evento.preventDefault();//previne o comportamento padrão do navegador (enter = recarregar ou enviar formulario)
+        calcular();
+    }
+    if(tecla === 'Backspace'){//se a tecla de apagar for pressionada chama a funcao apagar
+        back()
+    }
+    if(tecla === 'Escape'|| tecla.toLowerCase() === 'c'){//se o esc ou a letra c(convertida para minuscula) for pressionada
+        clean()//a funcao limpar é chamada
     }
 
-}   
+})
