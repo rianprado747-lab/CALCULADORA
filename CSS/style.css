@@ -7,6 +7,7 @@
     background-image: url('https://w.wallhaven.cc/full/1q/wallhaven-1qxqo9.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
     font-family: 'Wallpoet', cursive;
     text-align: center;
@@ -16,6 +17,7 @@
     position: absolute;
     top: 10%;
     left: 3%;
+    user-select: none;
 }
 .calculadora{
     position:absolute;
@@ -26,6 +28,7 @@
     transform:  translate(-50%,-50%);
     border-radius: 15px;
     padding: 20px;
+    user-select: none;
 }
 .botao{
    width: 50px;
@@ -120,4 +123,25 @@
     margin-top: 15px;
     font-size: 20px;
     padding: 5px;
+}
+@media (max-width:768px){
+    .calculadora{
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%,-50%);
+        width: 90%;
+        max-width: 320px;
+
+    }
+    .titulo {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        font-size: 20px;
+        user-select: none;
+    }
+    .botao, .del, .zero,.igual{
+        font-size: 18px;
+        user-select: none;
+    }
 }
