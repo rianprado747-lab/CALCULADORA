@@ -1,8 +1,33 @@
 function insert(num) {
-    var numero = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numero + num;
-    // A função insert(num) é usada para inserir um número ou operador na calculadora.
-    // Ela pega o conteúdo atual do elemento com o id 'resultado' e adiciona o novo número ou operador a ele, atualizando o display da calculadora.
+    var resultado = document.getElementById('resultado');
+    var numero = resultado.innerHTML;//AinnerHTML propriedade em JavaScript éUsado para obter ou definir o conteúdo HTML dentro de um elemento
+    
+    // operadores
+    const operadores = ['+','-','*','/'];
+
+    //pegando o ultimo caracter digitado no display 
+    const lastcaracter = numero.slice(-1);//Oslice() método em JavaScriptExtrai uma parte de uma string e a retorna como uma nova string sem modificar a original.
+    // sintaxe slice(inicio do indice,final do indice)
+
+    //impede começar com operador
+    if (numero === '' && operadores.includes(num)){//O JavaScript possui um método integrado .includes()usado para verificar se um valor específico existe dentro de um Array ou uma String , retornando true ou false
+        return;//declaração return encerra a execução de uma função e especifica o valor a ser enviado de volta para quem a chamou  
+    }
+
+    // impede dois operadores seguidos
+    if (operadores.includes(lastcaracter) && operadores.includes(num)){
+        //troca o operador antigo pelo novo
+        resultado.innerHTML = numero.slice(0, -1) + num;
+        return;
+    }
+
+    // impede dois pontos  . seguidos 
+    if (lastcaracter === '.' && num === '.'){
+        return;
+    }
+
+    //adiciona numero normalmente 
+    resultado.innerHTML += num;
 }
 function clean() {
     document.getElementById('resultado').innerHTML = "";
@@ -50,6 +75,9 @@ document.addEventListener('keydown',function(evento){//captura a entrada do tecl
     }
     if(tecla === 'Escape'|| tecla.toLowerCase() === 'c'){//se o esc ou a letra c(convertida para minuscula) for pressionada
         clean()//a funcao limpar é chamada
+    }
+    if(tecla ==='Delete'){// se delete for pressionado a funcao limpar é chamada
+        clean()
     }
 
 })
